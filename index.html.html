@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>H-Tech Cyber Services | htechcyber.co.ke</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Outfit:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#fbf9f5;--surface:#fff;--ink:#17140f;--muted:#6a6358;--line:#e7dfd0;--gold:#a9832f;--gold-soft:#f3ead6;--on-gold:#fff;--hero:#f4eee1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0c0a;--surface:#171510;--ink:#f5efe2;--muted:#a79f8f;--line:#2e2a20;--gold:#d8b25a;--gold-soft:#241f12;--on-gold:#15110a;--hero:#13110c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0c0a;--surface:#171510;--ink:#f5efe2;--muted:#a79f8f;--line:#2e2a20;--gold:#d8b25a;--gold-soft:#241f12;--on-gold:#15110a;--hero:#13110c;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Manrope,system-ui,sans-serif;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22px;white-space:nowrap}
+.mark{width:34px;height:34px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:15px}
+.links{display:flex;gap:22px;font-size:14px;font-weight:500}
+.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--gold)}
+.tools{display:flex;gap:10px;align-items:center}
+button,.btn{font:600 14px Manrope,sans-serif;cursor:pointer;border-radius:999px;padding:11px 20px;border:1px solid var(--gold);background:var(--gold);color:var(--on-gold);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,opacity .15s}
+button:hover,.btn:hover{opacity:.9}button:active,.btn:active{transform:scale(.97)}
+.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.ghost:hover{border-color:var(--gold);color:var(--gold)}
+#theme{width:42px;height:42px;padding:0;font-size:17px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero{background:var(--hero);border-bottom:1px solid var(--line);padding:84px 0 76px}
+.hero h1{font-size:clamp(44px,8vw,86px);letter-spacing:-.01em;max-width:11ch}
+.hero h1 em{color:var(--gold)}
+.hero p{max-width:46ch;color:var(--muted);font-size:18px;margin:22px 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;max-width:560px}
+.tags span::before{content:"✓ ";color:var(--gold);font-weight:700}
+section{padding:80px 0}
+.head{margin-bottom:38px;max-width:560px}
+.head h2{font-size:clamp(34px,5vw,50px)}
+.head p{color:var(--muted);margin:12px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card .ic{width:46px;height:46px;border-radius:50%;background:var(--gold-soft);display:grid;place-items:center;font-size:21px;margin-bottom:16px}
+.card h3{font-size:25px;margin-bottom:6px}
+.card p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.card button{padding:8px 16px;font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;counter-reset:s;padding:0;list-style:none;margin:0}
+.steps li{counter-increment:s;border-top:2px solid var(--gold);padding-top:16px}
+.steps li::before{content:counter(s);font:600 34px "Cormorant Garamond",serif;color:var(--gold)}
+.steps b{display:block;margin:2px 0 4px}.steps span{color:var(--muted);font-size:15px}
+.book{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:start}
+@media(max-width:820px){.book{grid-template-columns:1fr}.links{display:none}}
+form{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:14px}
+label{font-size:13px;font-weight:600;color:var(--muted);display:grid;gap:6px}
+input,select,textarea{font:400 16px Manrope,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:transparent}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.row{grid-template-columns:1fr}}
+.send{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.send button{padding:13px 10px}
+.wa{background:#1f9d55;border-color:#1f9d55;color:#fff}
+.note{font-size:13px;color:var(--muted);margin:0}
+#msg{display:none;font-size:14px;background:var(--gold-soft);border-radius:12px;padding:12px 14px;white-space:pre-wrap}
+.err{color:#c0392b;font-size:13px;min-height:1em;margin:0}
+.contact{display:grid;gap:12px}
+.ct{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-decoration:none;transition:border-color .2s}
+.ct:hover{border-color:var(--gold)}
+.ct i{font-style:normal;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+.ct small{display:block;color:var(--muted);font-size:12px}.ct strong{font-size:15px;word-break:break-all}
+.loc{background:var(--hero);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;padding:64px 0}
+.loc h2{font-size:clamp(40px,7vw,72px)}.loc p{color:var(--muted);margin:10px 0 0}
+footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px}
+footer b{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--hg:linear-gradient(135deg,#fff3d6 0%,#e4f3f0 55%,#e3ebf8 100%);--teal:#0e8a7d;--navy:#12304a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hg:linear-gradient(135deg,#2a1f06 0%,#0a2128 55%,#0e1830 100%);--teal:#2fc4b2;--navy:#9cc4ee}}
+:root[data-theme="dark"]{--hg:linear-gradient(135deg,#2a1f06 0%,#0a2128 55%,#0e1830 100%);--teal:#2fc4b2;--navy:#9cc4ee}
+body,input,select,textarea,button,.btn{font-family:Outfit,system-ui,sans-serif}
+h1,h2,h3,.logo,.steps li::before,footer b{font-family:"Playfair Display",Georgia,serif}
+h1{font-weight:800;letter-spacing:-.02em}
+h2{font-weight:700;letter-spacing:-.01em}
+.logo{font-size:20px;font-weight:700}
+.mark{background:linear-gradient(135deg,var(--gold),#f0cf7a);color:#1a1405;border:0;font-weight:700}
+.hero,.loc{background:var(--hg)}
+.hero h1{max-width:12ch}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--gold),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--ink);opacity:.78}
+.head h2{color:var(--navy)}
+.btn:not(.ghost),button:not(.ghost):not(.wa){background:linear-gradient(135deg,var(--gold),#e6bf5a);border:0;color:#1a1405}
+.wa{background:linear-gradient(135deg,#1fa855,#12873f)}
+.tags span::before{color:var(--teal)}
+.card{border-top:4px solid var(--c,var(--gold));transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -16px var(--c,var(--gold))}
+.card .ic{background:color-mix(in srgb,var(--c,var(--gold)) 16%,var(--surface))}
+.card h3{font-weight:700}
+.card button{border:1px solid var(--c,var(--gold));color:var(--c,var(--gold));background:transparent!important}
+.card:nth-child(1){--c:#2563eb}.card:nth-child(2){--c:#dc2626}.card:nth-child(3){--c:#d97706}.card:nth-child(4){--c:#16a34a}.card:nth-child(5){--c:#7c3aed}.card:nth-child(6){--c:var(--teal)}
+.steps li:nth-child(1){border-color:#2563eb}.steps li:nth-child(2){border-color:var(--gold)}.steps li:nth-child(3){border-color:var(--teal)}.steps li:nth-child(4){border-color:#dc2626}
+.steps li::before{color:var(--navy)}
+.ct:nth-child(2) i{background:#d64545}
+.wafab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;display:flex;align-items:center;gap:10px;background:#1fa855;color:#fff;text-decoration:none;font-weight:600;padding:13px 20px;border-radius:999px;box-shadow:0 10px 26px -8px rgba(18,135,63,.7)}
+.shr{display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap}.shr input{flex:1;min-width:200px;border-radius:999px;text-align:center}
+#share{border-top:1px solid var(--line)}
+.wafab svg{width:24px;height:24px;fill:#fff}
+@media(max-width:520px){.wafab span{display:none}.wafab{padding:14px}}
+.hg2{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+@media(max-width:900px){.hg2{grid-template-columns:1fr;gap:36px}}
+.hc{background:color-mix(in srgb,var(--surface) 82%,transparent);border:1px solid var(--line);border-radius:24px;padding:26px;backdrop-filter:blur(8px);box-shadow:0 30px 60px -34px rgba(0,0,0,.45)}
+.hc h3{font-size:24px;margin-bottom:12px}
+.hc a.li{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:500}
+.hc a.li:first-of-type{border-top:0}
+.hc .dot{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.hc .arr{margin-left:auto;color:var(--gold)}
+.hc .ft{margin:14px 0 0;font-size:13px;color:var(--muted)}
+.mnav{display:none}
+@media(max-width:820px){.mnav{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px}.mnav a{flex:none;text-decoration:none;font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.rv.in{opacity:1;transform:none}
+.faq{max-width:760px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 22px;margin-bottom:12px}
+details[open]{border-color:var(--gold)}
+summary{cursor:pointer;font-weight:600;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 18px;color:var(--muted);font-size:15px}
+.btn.wa,button.wa{background:linear-gradient(135deg,#1fa855,#12873f);color:#fff;border:0}
+button,.btn{white-space:nowrap}
+@media(max-width:480px){.nav{gap:8px}.nav .btn{padding:10px 14px;font-size:13px}.logo{font-size:17px;gap:7px}.mark{width:30px;height:30px}#theme{width:38px;height:38px}}
+.card:nth-child(6){--c:#db2777}.card:nth-child(7){--c:#0891b2}.card:nth-child(8){--c:#ea580c}.card:nth-child(9){--c:#4f46e5}.card:nth-child(10){--c:#0d9488}.card:nth-child(11){--c:#65a30d}.card:nth-child(12){--c:var(--teal)}
+/* classic theme */
+:root{--bg:#f7f2e8;--surface:#fffdf8;--ink:#1b1a17;--muted:#5f594c;--line:#d9ccb0;--gold:#8a6a1f;--gold-soft:#f1e7cf;--hero:#10243a;--navy:#14304d;--hg:linear-gradient(160deg,#0c1b2c 0%,#14304d 100%);--btn-bg:#14304d;--btn-fg:#f5eedd}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1621;--surface:#142131;--ink:#f3ecdc;--muted:#a9b0b9;--line:#2c3a4d;--gold:#d4af5f;--gold-soft:#1c2a3b;--hero:#0a1420;--navy:#e8dcc0;--hg:linear-gradient(160deg,#08111b 0%,#10243a 100%);--btn-bg:#d4af5f;--btn-fg:#10141a}}
+:root[data-theme="dark"]{--bg:#0e1621;--surface:#142131;--ink:#f3ecdc;--muted:#a9b0b9;--line:#2c3a4d;--gold:#d4af5f;--gold-soft:#1c2a3b;--hero:#0a1420;--navy:#e8dcc0;--hg:linear-gradient(160deg,#08111b 0%,#10243a 100%);--btn-bg:#d4af5f;--btn-fg:#10141a}
+header{border-bottom:3px double var(--gold)}
+.logo{text-transform:uppercase;letter-spacing:.07em;font-size:16px}
+.links a{text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;font-weight:600}
+button,.btn{border-radius:2px;text-transform:uppercase;letter-spacing:.11em;font-size:12px;font-weight:600}
+.btn:not(.ghost):not(.wa),button:not(.ghost):not(.wa){background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--gold)}
+.card button{background:transparent!important;color:var(--gold);border:1px solid var(--gold)}
+.ghost{border-color:var(--gold);color:var(--ink)}
+.hero,.loc{color:#f5eedd}
+.hero p,.loc p{color:#e6dcc4;opacity:1}
+.loc h2{color:#f5eedd}
+.hero h1{font-weight:700}
+.hero h1 em{background:none;-webkit-background-clip:initial;background-clip:initial;color:#e2bf6c}
+.hero .btn:not(.ghost):not(.wa){background:#d4af5f;color:#10141a;border-color:#d4af5f}
+.hero .btn.ghost{color:#f5eedd;border-color:rgba(245,238,221,.45)}
+.tags{color:#cfc6af;border-top-color:rgba(212,175,95,.35)}
+.tags span::before{color:#d4af5f}
+.hc{background:rgba(255,255,255,.06);border:1px solid rgba(212,175,95,.4);border-radius:2px;color:#f5eedd}
+.hc a.li{border-top-color:rgba(245,238,221,.14)}
+.hc .dot{background:#d4af5f}.hc .arr{color:#d4af5f}.hc .ft{color:#cfc6af}
+.head h2::after{content:"";display:block;width:56px;height:2px;background:var(--gold);margin-top:14px}
+#share .head h2::after{margin-inline:auto}
+.card,form,details,.ct,.shr input,input,select,textarea,.mnav a{border-radius:2px}
+.card{border:1px solid var(--line);border-top:3px solid var(--gold)}
+.card:hover{box-shadow:0 16px 30px -20px rgba(0,0,0,.4)}
+.card .ic{background:var(--gold-soft);border:1px solid var(--line)}
+.steps li{border-color:var(--gold)!important}
+.steps li::before{color:var(--gold)}
+.ct i{border-radius:2px}
+footer{background:#0c1b2c;color:#b9b2a0;border-top:3px double #d4af5f;padding:34px 0}
+footer b{color:#f5eedd;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:480px){.logo{font-size:14px;letter-spacing:.04em}.nav .btn{font-size:11px;padding:10px 12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#top"><span class="mark">H</span>H-Tech Cyber</a>
+<nav class="links"><a href="#services">Services</a><a href="#how">How to book</a><a href="#book">Book</a><a href="#contact">Contact</a><a href="#faq">FAQ</a></nav>
+<div class="tools"><button id="theme" class="ghost" aria-label="Switch between light and dark mode" title="Light / dark">◐</button><a class="btn" href="#book">Book now</a></div>
+</div><nav class="mnav wrap" aria-label="Sections"><a href="#services">Services</a><a href="#how">How to book</a><a href="#book">Book</a><a href="#contact">Contact</a><a href="#faq">FAQ</a></nav></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hg2"><div>
+<h1>Your one stop cyber &amp; <em>digital</em> solutions</h1>
+<p>HELB, KRA, SHA and more, handled quickly and securely by H-Tech Cyber Services in Eldoret. Book online or message us in a minute.</p>
+<div class="cta"><a class="btn" href="#book">Book a service</a><a class="btn wa" href="https://api.whatsapp.com/send?phone=254718035457&text=Hello%20H-Tech%20Cyber%20Services%2C%20I%20need%20help%20with%20a%20service." target="_blank" rel="noopener">Chat on WhatsApp</a><a class="btn ghost" href="#contact">Contact us</a></div>
+<div class="tags"><span>Fast processing</span><span>Affordable charges</span><span>Friendly support</span><span>100% confidentiality</span></div>
+</div>
+<aside class="hc"><h3>Popular services</h3>
+<a class="li" href="#book" style="--c:#2563eb"><i class="dot"></i>HELB application<span class="arr">→</span></a>
+<a class="li" href="#book" style="--c:#dc2626"><i class="dot"></i>KRA filing returns<span class="arr">→</span></a>
+<a class="li" href="#book" style="--c:#d97706"><i class="dot"></i>KRA PIN &amp; iTax<span class="arr">→</span></a>
+<a class="li" href="#book" style="--c:#16a34a"><i class="dot"></i>SHA registration<span class="arr">→</span></a>
+<a class="li" href="#book" style="--c:#7c3aed"><i class="dot"></i>Password recovery<span class="arr">→</span></a>
+<p class="ft">Walk in or book online. Your success, our priority.</p></aside>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="head"><h2>Our services</h2><p>Fast, reliable and secure help with the online services you use most.</p></div>
+<div class="grid">
+<div class="card"><div class="ic">🎓</div><h3>HELB application</h3><p>Get your HELB loan application done easily.</p><button class="ghost" data-s="HELB application">Book this</button></div>
+<div class="card"><div class="ic">📑</div><h3>KRA filing returns</h3><p>File your returns on time and stay compliant.</p><button class="ghost" data-s="KRA filing returns">Book this</button></div>
+<div class="card"><div class="ic">🪪</div><h3>KRA application</h3><p>New KRA PIN, iTax registration and more.</p><button class="ghost" data-s="KRA application">Book this</button></div>
+<div class="card"><div class="ic">🩺</div><h3>SHA registration</h3><p>Register for SHA and access quality healthcare.</p><button class="ghost" data-s="SHA registration">Book this</button></div>
+<div class="card"><div class="ic">🔐</div><h3>Password recovery</h3><p>Get your accounts recovered or reset.</p><button class="ghost" data-s="Password recovery or reset">Book this</button></div>
+<div class="card"><div class="ic">🎨</div><h3>Graphic design</h3><p>Logos, posters, flyers, business cards and social media designs.</p><button class="ghost" data-s="Graphic design">Book this</button></div>
+<div class="card"><div class="ic">🖨️</div><h3>Printing &amp; photocopying</h3><p>Clear black and white and colour prints and copies.</p><button class="ghost" data-s="Printing and photocopying">Book this</button></div>
+<div class="card"><div class="ic">📝</div><h3>CV &amp; typing</h3><p>Professional CVs, cover letters, assignments and document typing.</p><button class="ghost" data-s="CV writing and typing">Book this</button></div>
+<div class="card"><div class="ic">📄</div><h3>Scanning &amp; lamination</h3><p>Scan, save and protect your important documents.</p><button class="ghost" data-s="Scanning and lamination">Book this</button></div>
+<div class="card"><div class="ic">🌐</div><h3>Online applications</h3><p>Job, college and other online application forms filled in properly.</p><button class="ghost" data-s="Online applications">Book this</button></div>
+<div class="card"><div class="ic">✉️</div><h3>Email &amp; account setup</h3><p>Create and set up email and online accounts the right way.</p><button class="ghost" data-s="Email and account setup">Book this</button></div>
+<div class="card"><div class="ic">🖥️</div><h3>And more</h3><p>Document processing, forms, online applications and general cyber services.</p><button class="ghost" data-s="Other service">Book this</button></div>
+</div></div></section>
+
+<section id="how" style="padding-top:0"><div class="wrap">
+<div class="head"><h2>How to book</h2><p>Four simple steps, whichever way you prefer to reach us.</p></div>
+<ol class="steps">
+<li><b>Choose a service</b><span>Pick what you need from the list above.</span></li>
+<li><b>Fill in the form</b><span>Add your name, phone, and a day and time that suit you.</span></li>
+<li><b>Send your request</b><span>Send it by WhatsApp, email, Instagram or Facebook.</span></li>
+<li><b>Visit us in Eldoret</b><span>We confirm your slot and get it done fast.</span></li>
+</ol></div></section>
+
+<section id="book" style="padding-top:0"><div class="wrap book">
+<div class="head" style="margin:0"><h2>Book a service</h2><p>Fill in your details and choose where to send your request. Your message is written for you, so you only tap send.</p>
+<p class="note" style="margin-top:18px">Bring your ID and any documents needed for the service. We keep everything confidential.</p></div>
+<form id="f" novalidate>
+<div class="row"><label>Full name<input id="n" autocomplete="name" placeholder="Your name"></label>
+<label>Phone number<input id="p" type="tel" autocomplete="tel" placeholder="07XX XXX XXX"></label></div>
+<label>Service<select id="s"><option value="">Select a service</option><option>HELB application</option><option>KRA filing returns</option><option>KRA application</option><option>SHA registration</option><option>Password recovery or reset</option><option>Graphic design</option><option>Printing and photocopying</option><option>CV writing and typing</option><option>Scanning and lamination</option><option>Online applications</option><option>Email and account setup</option><option>Other service</option></select></label>
+<div class="row"><label>Preferred date<input id="d" type="date"></label>
+<label>Preferred time<select id="t"><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label></div>
+<label>Details (optional)<textarea id="m" rows="3" placeholder="Anything we should know?"></textarea></label>
+<p class="err" id="e" role="alert"></p>
+<div class="send">
+<button type="button" class="wa" data-c="wa">WhatsApp</button>
+<button type="button" data-c="em">Email</button>
+<button type="button" class="ghost" data-c="ig">Instagram</button>
+<button type="button" class="ghost" data-c="fb">Facebook</button>
+</div>
+<p class="note">Instagram and Facebook: your message is copied, then paste it into the chat.</p>
+<div id="msg" aria-live="polite"></div>
+</form></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap">
+<div class="head"><h2>Reach out</h2><p>Call, message or email us. We reply fast.</p></div>
+<div class="grid contact">
+<a class="ct" href="https://api.whatsapp.com/send?phone=254718035457&text=Hello%20H-Tech%20Cyber%20Services" target="_blank" rel="noopener"><i style="background:#1f9d55">W</i><span><small>Calls and WhatsApp</small><strong>0718 035 457</strong></span></a>
+<a class="ct" href="mailto:carlosochieng00@gmail.com"><i style="background:#d64545">@</i><span><small>Email</small><strong>carlosochieng00@gmail.com</strong></span></a>
+<a class="ct" href="https://www.instagram.com/carlos._.kings" target="_blank" rel="noopener"><i style="background:#c13584">IG</i><span><small>Instagram</small><strong>@Carlos._,kings</strong></span></a>
+<a class="ct" href="https://www.facebook.com/search/top?q=Carlos%20ochieng" target="_blank" rel="noopener"><i style="background:#1877f2">f</i><span><small>Facebook</small><strong>Carlos ochieng</strong></span></a>
+</div></div></section>
+
+<div class="loc"><div class="wrap"><h2>Located in Eldoret</h2><p>Visit us today for all your cyber services needs.</p></div></div>
+<section id="faq" style="padding-top:0"><div class="wrap"><div class="head"><h2>Good to know</h2><p>Quick answers before you visit or book.</p></div><div class="faq">
+<details><summary>What should I bring?</summary><p>Bring your national ID and the phone number and email linked to your accounts. We’ll tell you if a service needs anything extra.</p></details>
+<details><summary>How much does it cost?</summary><p>Our charges are affordable and depend on the service. Message us on WhatsApp for a quick quote.</p></details>
+<details><summary>How fast is it?</summary><p>We work fast, and most requests are handled quickly. Timing can depend on the service and on the government portals being available.</p></details>
+<details><summary>Is my information safe?</summary><p>Yes. Every client’s details are kept 100% confidential and used only to complete your request.</p></details>
+<details><summary>Can you help with something not listed?</summary><p>Very likely. We also handle document processing, forms, online applications and general cyber services. Just ask.</p></details>
+</div></div></section>
+
+<section id="share" style="padding:64px 0"><div class="wrap" style="text-align:center"><div class="head" style="margin:0 auto 26px"><h2>Share our website</h2><p>Know someone who needs HELB, KRA or SHA help? Send them our link.</p></div>
+<div class="shr"><input id="lk" readonly aria-label="Website link"><button type="button" id="cp">Copy link</button></div>
+<div class="cta" style="justify-content:center;margin-top:16px"><button type="button" id="ns">Share…</button><a class="btn wa" id="sw" target="_blank" rel="noopener" href="#">Share on WhatsApp</a><a class="btn ghost" id="sf" target="_blank" rel="noopener" href="#">Facebook</a></div></div></section>
+</main>
+<footer><div class="wrap"><b>H-Tech Cyber Services</b><br>Fast · Reliable · Secure · Eldoret, Kenya<br><strong style="color:var(--gold);font-weight:600">htechcyber.co.ke</strong></div></footer>
+<a class="wafab" href="https://api.whatsapp.com/send?phone=254718035457&text=Hello%20H-Tech%20Cyber%20Services" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.300 1.200-1.800 1.300-.5.1-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.300 0 .500l-.4.600c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg><span>Chat on WhatsApp</span></a>
+
+<script>
+(function(){
+var r=document.documentElement,$=function(i){return document.getElementById(i)};
+try{var sv=localStorage.getItem("ht-theme");if(sv)r.setAttribute("data-theme",sv)}catch(e){}
+$("theme").onclick=function(){var dark=r.getAttribute("data-theme")?r.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme:dark)").matches;var v=dark?"light":"dark";r.setAttribute("data-theme",v);try{localStorage.setItem("ht-theme",v)}catch(e){}};
+$("d").min=new Date().toISOString().slice(0,10);
+document.querySelectorAll("[data-s]").forEach(function(b){b.onclick=function(){$("s").value=b.dataset.s;$("book").scrollIntoView();setTimeout(function(){$("n").focus({preventScroll:true})},500)}});
+function build(){
+var n=$("n").value.trim(),p=$("p").value.trim(),s=$("s").value;
+if(!n||!p||!s){$("e").textContent="Please add your name, phone number and a service.";return null}
+$("e").textContent="";
+var d=$("d").value;
+return "Hello H-Tech Cyber Services, I would like to book:\n\nService: "+s+"\nName: "+n+"\nPhone: "+p+"\nPreferred date: "+(d||"Any day")+"\nPreferred time: "+$("t").value+($("m").value.trim()?"\nDetails: "+$("m").value.trim():"")+"\n\nThank you."}
+function show(t,note){var m=$("msg");m.style.display="block";m.textContent=note+"\n\n"+t}
+document.querySelectorAll("[data-c]").forEach(function(b){b.onclick=function(){
+var t=build();if(!t)return;var c=b.dataset.c;
+if(c==="wa"){window.open("https://api.whatsapp.com/send?phone=254718035457&text="+encodeURIComponent(t),"_blank","noopener");show(t,"Opening WhatsApp. Your message:")}
+else if(c==="em"){location.href="mailto:carlosochieng00@gmail.com?subject="+encodeURIComponent("Booking: "+$("s").value)+"&body="+encodeURIComponent(t);show(t,"Opening your email app. Your message:")}
+else{var u=c==="ig"?"https://www.instagram.com/carlos._.kings":"https://www.facebook.com/search/top?q=Carlos%20ochieng";
+var done=function(ok){show(t,ok?"Message copied. Paste it in the chat:":"Copy this message and paste it in the chat:");window.open(u,"_blank","noopener")};
+try{navigator.clipboard.writeText(t).then(function(){done(true)},function(){done(false)})}catch(e){done(false)}}
+}});
+var L=location.href.split('#')[0],T="H-Tech Cyber Services, Eldoret: HELB, KRA, SHA and more. Fast, reliable and secure.";
+$("lk").value=L;$("lk").onclick=function(){this.select()};
+$("sw").href="https://api.whatsapp.com/send?text="+encodeURIComponent(T+"\n"+L);
+$("sf").href="https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(L);
+$("cp").onclick=function(){var b=this,ok=function(){b.textContent="Copied ✓";setTimeout(function(){b.textContent="Copy link"},2000)};
+try{navigator.clipboard.writeText(L).then(ok,function(){$("lk").select();b.textContent="Press Ctrl+C"})}catch(e){$("lk").select();b.textContent="Press Ctrl+C"}};
+if(navigator.share){$("ns").onclick=function(){try{navigator.share({title:"H-Tech Cyber Services",text:T,url:L}).catch(function(){})}catch(e){}}}else{$("ns").style.display="none"}
+var rvEls=document.querySelectorAll(".card,.steps li,.ct,details,.head,.shr,.hc");
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){t.classList.remove("rv","in")},700)}})},{threshold:.1});rvEls.forEach(function(el){el.classList.add("rv");io.observe(el)})}
+})();
+</script>
+</body>
+</html>
